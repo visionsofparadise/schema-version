@@ -1,6 +1,6 @@
 {
 	"name": "schema-version",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A utility for managing data schema versions. Allows you to migrate between versions, migrate to latest version, and provide version maps for backwards compatibility.",
 	"main": "./dist/index.js",
 	"scripts": {
