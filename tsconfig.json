@@ -1,0 +1,32 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "ES2018",
+		"lib": ["ES2019"],
+		"strict": true,
+		"declaration": true,
+		"moduleResolution": "node",
+		"rootDir": "src",
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["node_modules/*", "src/types/d/*"]
+		},
+		"esModuleInterop": true,
+		"removeComments": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"resolveJsonModule": true,
+		"allowJs": true,
+	},
+	"include": ["src/**/*.ts", "src/**/*.tsx"],
+	"exclude": ["dist/", "node_modules"],
+	"types": ["jest"],
+	"typeRoots": ["node_modules/@types"]
+}

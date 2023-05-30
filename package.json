@@ -1,0 +1,44 @@
+{
+	"name": "schema-version",
+	"version": "0.0.1",
+	"description": "A utility for managing data schema versions. Allows you to migrate between versions, migrate to latest version, and provide version maps for backwards compatibility.",
+	"main": "./dist/index.js",
+	"scripts": {
+		"check": "tsc --noEmit",
+		"compile": "tsc --project tsconfig.build.json",
+		"test": "jest",
+		"patch": "npm version patch && npm publish",
+		"build": "npm run compile && npm run test && npm run patch"
+	},
+	"devDependencies": {
+		"@types/jest": "^29.5.1",
+		"@types/node": "^18.7.0",
+		"aws-cdk": "^2.81.0",
+		"aws-cdk-lib": "^2.81.0",
+		"constructs": "^10.2.37",
+		"jest": "^29.4.3",
+		"ts-jest": "^29.0.5",
+		"ts-node": "^10.9.1",
+		"ts-toolbelt": "^9.6.0",
+		"typescript": "^5.0.4"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/visionsofparadise/schema-version.git"
+	},
+	"keywords": [
+		"schema",
+		"version",
+		"migrate",
+		"migration",
+		"backwards compatibility",
+		"upgrade",
+		"downgrade"
+	],
+	"author": "xkore",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/visionsofparadise/schema-version/issues"
+	},
+	"homepage": "https://github.com/visionsofparadise/schema-version#readme"
+}
