@@ -20,23 +20,17 @@ The use case that inspired the library was managing items in a noSQL database th
 export namespace User {
  export interface V1 {
   firstName: string;
-  type: string;
-  common: string;
   schemaVersion: 1; // schemaVersion attribute is required in each schema
  }
 
  export interface V2 {
   firstName: string;
   lastName: string;
-  type: number;
-  common: string;
   schemaVersion: 2;
  }
 
  export interface V3 {
   fullName: string;
-  type: number;
-  common: string;
   schemaVersion: 3;
  }
 }
@@ -46,7 +40,6 @@ export class UserV1 extends SchemaVersion<User.V1> {
   return new UserV2({
    ...this.item,
    lastName: "lastName",
-   type: parseInt(this.item.type),
    schemaVersion: 2,
   });
  };
@@ -56,8 +49,6 @@ export class UserV2 extends SchemaVersion<User.V2> {
  down = () => {
   return new UserV1({
    firstName: this.item.firstName,
-   type: String(this.item.type),
-   common: this.item.common,
    schemaVersion: 1,
   });
  };
@@ -67,8 +58,6 @@ export class UserV2 extends SchemaVersion<User.V2> {
 
   return new UserV3({
    fullName: this.item.firstName + " " + this.item.lastName,
-   type: this.item.type,
-   common: this.item.common,
    schemaVersion: 3,
   });
  };
@@ -83,8 +72,6 @@ export class UserV3 extends SchemaVersion<User.V3> {
   return new UserV2({
    firstName,
    lastName,
-   type: this.item.type,
-   common: this.item.common,
    schemaVersion: 2,
   });
  };
@@ -102,8 +89,6 @@ export const User = new SchemaVersionController({
 ```js
 const v1 = new User.Item({
 	firstName: "firstName",
-	type: "1",
-	common: "common",
 	schemaVersion: 1,
 });
 
